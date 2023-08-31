@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Agreement</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="title-container">
+        <h1>Sancol Properties LLC</h1>
+
+        <h3>Please fill out the following form</h3>
+
+    </div>
+
+    <form id="submissionForm">
+        <div class="required-data">
+            <p>First Name</p>
+            <input type="text" name="firstname" id="firstname" placeholder="John">
+            <p>Last Name</p>
+            <input type="text" name="lastname" id="lastname" placeholder="Smith">
+            <p>Phone Number</p>
+            <input type="number" name="number" id="number" placeholder="111-111-1111" required>
+            <p>Email</p>
+            <input type="email" name="email" id="email" placeholder="johnsmith@sancol.com" required>
+        </div>
+        <div class="user-agreemant-container">
+            <div class="user-agreement-wrapper">
+                <p>By clicking 'Yes, I accept' above, I agree to let YOUR BUSINESS NAME and its partners send me
+                    marketing,
+                    transactional, and informational messages about buying or selling my property. YOUR BUSINESS NAME
+                    will
+                    send text messages, phone calls, pre-recorded or artificial voice messages, either from their phone
+                    system or with their CRM or Automatic Telephone Dialing System (ATDS), regarding my submitted
+                    property
+                    to provide additional information, property valuation, a request to buy my house, or make an offer.
+                    I
+                    also confirm that I am inquiring about my property from the number I own and provided. I can
+                    unsubscribe
+                    at any time by simply texting the word STOP to XXX-XXX-XXXX. YOUR BUSINESS NAME assures me that my
+                    privacy will always be safeguarded and respected. This consent applies even if I am previously
+                    registered on any Federal, State, and/or internal Do Not Call (DNC) list or registries. I confirm
+                    that I
+                    am at least 18 years old and have read and accepted your website's Privacy Policy. Msg&data rates
+                    may
+                    apply.
+
+
+                </p>
+                <input type="checkbox" name="user agreement" id="checkbox" required>I have read the user agreement
+
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+        <script>
+            document.getElementById("submissionForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (validateForm()) {
+                    window.location.href = "./submission.html"
+                }
+            });
+
+            function validateForm() {
+                const firstName = document.getElementById("firstname").value;
+                const lastName = document.getElementById("lastname").value;
+                const phoneNumber = document.getElementById("number").value;
+                const email = document.getElementById("email").value;
+                const agreementCheckbox = document.getElementById("checkbox").checked;
+
+                if (firstName.trim() === "" || lastName.trim() === "" || phoneNumber.trim() === "" || email.trim() === "" || !agreementCheckbox) {
+                    alert("Please fill out all required fields and agree to the user agreement.");
+                    return false;
+                }
+
+
+
+                return true;
+            }
+        </script>
+    </form>
+
+
+</body>
+
+</html>

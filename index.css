@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+  margin-left: 300px;
+  margin-right: 300px;
+  border: 2px solid black;
+  display: grid;
+}
+
+.title-container {
+  justify-items: center;
+  border: 2px solid blue;
+  text-align: center;
+  height: 150px;
+}
+
+#submissionForm {
+  margin-top: -50px;
+  text-align: center;
+}
+.user-agreement-container {
+  border: 2px solid blue;
+}
+
+.user-agreement-wrapper p {
+  text-align: left;
+  margin: 20px;
+}
+
+button {
+  width: 178px;
+  height: 40px;
+  border-radius: 25px;
+}
